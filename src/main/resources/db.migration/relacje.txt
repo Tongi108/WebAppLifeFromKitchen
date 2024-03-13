@@ -1,0 +1,27 @@
+Tabela Producer i Delivery_Address:
+Relacja "one-to-many": Jeden producent może mieć wiele adresów dostawy,
+ale każdy adres dostawy należy tylko do jednego producenta. Oznacza to,
+że relacja między tabelami Producer i Delivery_Address jest "one-to-many"
+(jeden producent do wielu adresów dostawy).
+
+Tabela Customer i Address:
+Relacja "one-to-many": Jeden klient może mieć wiele adresów, ale każdy adres należy tylko do jednego klienta. Oznacza to, że relacja między tabelami Customer i Address jest "one-to-many" (jeden klient do wielu adresów).
+
+Tabela Customer i Order_Header:
+Relacja "one-to-many": Jeden klient może składać wiele zamówień, ale każde zamówienie może należeć tylko do jednego klienta. Oznacza to, że relacja między tabelami Customer i Order_Header jest "one-to-many" (jeden klient do wielu nagłówków zamówień).
+
+Tabela Producer i Order_Header:
+Relacja "one-to-many": Jeden producent może mieć wiele zamówień, ale każde zamówienie może być przypisane tylko do jednego producenta. Oznacza to, że relacja między tabelami Producer i Order_Header jest "one-to-many" (jeden producent do wielu nagłówków zamówień).
+
+Tabela Order_Header i Order_Detail:
+Relacja "one-to-many": Jeden nagłówek zamówienia może zawierać wiele szczegółów zamówienia, ale każdy szczegół zamówienia należy tylko do jednego nagłówka zamówienia. Oznacza to, że relacja między tabelami Order_Header i Order_Detail jest "one-to-many" (jeden nagłówek zamówienia do wielu szczegółów zamówienia).
+
+Tabela Menu i Menu_Item:
+Relacja "one-to-many": Jedno menu może zawierać wiele elementów menu, ale każdy element menu należy tylko do jednego menu. Oznacza to, że relacja między tabelami Menu i Menu_Item jest "one-to-many" (jedno menu do wielu elementów menu).
+
+Tabela Menu_Category i Menu:
+Relacja "one-to-many": Jedna kategoria menu może zawierać wiele menu, ale każde menu należy tylko do jednej kategorii. Oznacza to, że relacja między tabelami Menu_Category i Menu jest "one-to-many" (jedna kategoria menu do wielu menu).
+
+Tabela Menu_Item_Category i Menu_Item:
+Relacja "one-to-many": Jedna kategoria elementów menu może zawierać wiele elementów menu, ale każdy element menu należy tylko do jednej kategorii. Oznacza to, że relacja między tabelami Menu_Item_Category i Menu_Item jest "one-to-many" (jedna kategoria elementów menu do wielu elementów menu).
+Te relacje "one-to-many" opisują, jak poszczególne rekordy w jednej tabeli mogą być powiązane z wieloma rekordami w innej tabeli. Takie relacje są kluczowe dla zrozumienia i zarządzania danymi w bazie danych, a także dla implementacji funkcji biznesowych w aplikacji.
