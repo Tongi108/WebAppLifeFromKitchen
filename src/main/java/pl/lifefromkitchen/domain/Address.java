@@ -2,6 +2,8 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
+import java.util.Set;
+
 @With
 @Value
 @Builder
@@ -13,5 +15,7 @@ public class Address {
     String city;
     String street;
     String postalCode;
+    Customer customer;
+
 
 }

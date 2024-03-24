@@ -2,16 +2,20 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
+import java.util.Set;
+
 @With
 @Value
 @Builder
-@EqualsAndHashCode(of = "MenuItemId")
-@ToString(of = {"MenuItemId", "name", "price"})
+@EqualsAndHashCode(of = "menuItemId")
+@ToString(of = {"menuItemId", "name", "price"})
 public class MenuItem {
 
-    Integer MenuItemId;
+    Integer menuItemId;
     String name;
     String price;
     String imageUrl;
-    Integer menuItemCategoryId;
+    MenuItemCategory menuItemCategory;
+    Set<OrderDetail> orderDetails;
+    Set<MenuMenuItem> menuMenuItems;//sprawdzić czy tak może być(połączenie ManyToMany)
 }

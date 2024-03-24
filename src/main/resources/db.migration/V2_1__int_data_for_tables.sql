@@ -75,7 +75,7 @@ VALUES (1, 1),
        (9, 4);
 
 
-INSERT INTO Customer (name, surname, phone, email, address_id)
+INSERT INTO Customer (name, surname, phone_number, email, address_id)
 VALUES ('Jan', 'Kowalski', '123-456-789', 'jan@example.com', 1),
        ('Anna', 'Nowak', '987-654-321', 'anna@example.com', 2),
        ('Piotr', 'Wiśniewski', '555-444-333', 'piotr@example.com', 3);

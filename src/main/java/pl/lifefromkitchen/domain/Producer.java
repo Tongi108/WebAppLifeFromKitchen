@@ -1,34 +1,27 @@
 package pl.lifefromkitchen.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
 
-@Getter
-@Setter
-//@Entity
+
+@With
+@Value
 @Builder
-//@Table
-@AllArgsConstructor
-@NoArgsConstructor
-//@EqualsAndHashCode(of = "name")
-//@ToString(of = {"producerId", "name", "city", "postalCode", "street", "email", "phoneNumber"})
+@EqualsAndHashCode(of = "email")
+@ToString(of = {"producerId", "name", "city", "postalCode", "street", "email", "phoneNumber"})
 public class Producer {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer producerId;
 
-
-    private String name;
-
-    private String city;
-
-    private String postalCode;
-
-    private String street;
-
-    private String email;
-
-    private String phoneNumber;
+    Integer producerId;
+    String name;
+    String city;
+    String postalCode;
+    String street;
+    String email;
+    String phoneNumber;
+    Set<OrderHeader> orderHeaders;
+    Set<Menu> menus;
+    //brakuje producerDeliveryAddress
+    // brakuje deliveryAddress
 }
