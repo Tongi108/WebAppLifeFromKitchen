@@ -6,11 +6,11 @@ import lombok.*;
 @Value
 @Builder
 @EqualsAndHashCode(of = "MenuId")
-@ToString(of = {"MenuId", "description", "producerId", "menuCategory"})
+@ToString(of = {"MenuId", "description"})
 public class Menu {
 
     Integer MenuId;
     String description;
-    Integer producerId;
-    Integer menuCategory;
+    Producer producer;
+    MenuCategory menuCategory;
 }

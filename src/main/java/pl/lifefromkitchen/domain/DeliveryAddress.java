@@ -1,6 +1,9 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
+import pl.lifefromkitchen.infrastructure.database.entity.ProducerEntity;
+
+import java.util.Set;
 
 @With
 @Value
@@ -13,4 +16,5 @@ public class DeliveryAddress {
     String street;
     String city;
     String postalCode;
+    Set<Producer> producers;
 }

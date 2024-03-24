@@ -3,6 +3,8 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @EqualsAndHashCode(of = "producerId")
@@ -35,4 +37,7 @@ public class ProducerEntity {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @ManyToMany(mappedBy = "producer")
+    private Set<DeliveryAddressEntity> deliverAddresses;
 }

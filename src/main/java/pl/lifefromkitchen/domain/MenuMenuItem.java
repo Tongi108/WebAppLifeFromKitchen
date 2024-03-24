@@ -2,8 +2,6 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
-import java.util.Objects;
-
 @With
 @Value
 @Builder
