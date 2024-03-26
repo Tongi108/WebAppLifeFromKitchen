@@ -24,19 +24,14 @@ public class MenuEntity {
     @Column(name = "description")
     String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "producer_id")
     ProducerEntity producer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "menu_category_id")
     MenuCategoryEntity menuCategory;
 
-    @ManyToMany
-    @JoinTable(
-            name = "menu_menuItem",
-            joinColumns = @JoinColumn(name = "menu_id"),
-            inverseJoinColumns = @JoinColumn(name = "menu_item_id")
-    )
-    private Set<MenuItemEntity> menuItems;
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "menus")
+    private Set<MenuItemEntity> menuOfItems;
 }

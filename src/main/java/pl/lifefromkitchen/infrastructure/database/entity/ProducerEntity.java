@@ -2,6 +2,7 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import pl.lifefromkitchen.domain.DeliveryAddress;
 
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class ProducerEntity {
     @Column(name = "producer_id")
     private Integer producerId;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     @Column(name = "city")
@@ -38,6 +39,18 @@ public class ProducerEntity {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @ManyToMany(mappedBy = "producer")
-    private Set<DeliveryAddressEntity> deliverAddresses;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producer")
+    Set<OrderHeaderEntity> orderHeaders;
+
+    @ManyToMany
+    @JoinTable(
+            name = "producer_delivery_address",
+            joinColumns = @JoinColumn(name = "producer_id"),
+            inverseJoinColumns = @JoinColumn(name = "delivery_address_id")
+    )
+    private Set<DeliveryAddressEntity> deliveryAddresses;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producer")
+    private Set<MenuEntity> menus;
 }

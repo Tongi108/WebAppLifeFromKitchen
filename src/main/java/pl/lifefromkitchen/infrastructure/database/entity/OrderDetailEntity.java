@@ -6,6 +6,7 @@ import pl.lifefromkitchen.domain.MenuItem;
 import pl.lifefromkitchen.domain.OrderHeader;
 
 import java.math.BigDecimal;
+
 @Getter
 @Setter
 @EqualsAndHashCode(of = "orderDetailId")
@@ -22,9 +23,17 @@ public class OrderDetailEntity {
     @Column(name = "order_detail_id")
     Integer orderDetailId;
 
-    
-    String orderNumber;
+    @Column(name = "order_number", unique = true)
+    private String orderNumber;
+
+    @Column(name = "total_price")
     BigDecimal totalPrice;
-    OrderHeader orderHeader;
-    MenuItem menuItem;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_header_id")
+    private OrderHeaderEntity orderHeader;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menu_item_id")
+    private MenuItemEntity menuItem;
 }

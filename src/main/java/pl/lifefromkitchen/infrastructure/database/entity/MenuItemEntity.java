@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import pl.lifefromkitchen.domain.MenuItemCategory;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @EqualsAndHashCode(of = "menuItemId")
@@ -33,7 +35,13 @@ public class MenuItemEntity {
     @JoinColumn(name = "menu_item_category_id")
     MenuItemCategoryEntity menuItemCategory;
 
-    @ManyToMany
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = )
+    @ManyToMany
+    @JoinTable(name = "menu_menuItem",
+            joinColumns = @JoinColumn(name = "menu_item_id"),
+            inverseJoinColumns = @JoinColumn(name = "menu_id"))
+    private Set<MenuEntity> menus;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "menuItem")
+    private Set<OrderDetailEntity> orderDetail;
 }

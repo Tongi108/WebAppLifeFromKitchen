@@ -38,6 +38,6 @@ public class OrderHeaderEntity {
     @JoinColumn(name = "producer_id")
     private ProducerEntity producer;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order_header")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderHeader")
     private Set<OrderDetailEntity> orderDetails;
 }

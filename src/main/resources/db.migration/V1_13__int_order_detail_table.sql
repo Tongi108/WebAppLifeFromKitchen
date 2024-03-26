@@ -1,6 +1,7 @@
 CREATE TABLE Order_Detail
 (
     order_detail_id SERIAL PRIMARY KEY,
+    order_number VARCHAR(50) UNIQUE,
     order_header_id INT,
     menu_item_id    INT,
     total_price     NUMERIC(19, 2),
