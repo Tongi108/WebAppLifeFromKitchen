@@ -25,7 +25,7 @@ public class MenuCategoryEntity {
     @Column(name = "name")
     String name;
 
-    @OneToMany(mappedBy = "menu_category", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "menuCategory", fetch = FetchType.LAZY)
     private Set<MenuEntity> menus;
 
 

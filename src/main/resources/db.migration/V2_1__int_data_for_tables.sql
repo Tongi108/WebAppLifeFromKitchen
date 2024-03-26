@@ -87,8 +87,8 @@ VALUES ('2024-03-06', 1, 1, 1),
        ('2024-03-06', 1, 3, 3);
 
 
-INSERT INTO Order_Detail (order_header_id, menu_item_id, total_price)
-VALUES (1, 1, 15.99),
-       (1, 3, 16.50),
-       (2, 5, 18.00),
-       (3, 7, 14.50);
+INSERT INTO Order_Detail (order_number, order_header_id, menu_item_id, total_price)
+VALUES ('ORD001', 1, 1, 15.99),
+       ('ORD002', 1, 3, 16.50),
+       ('ORD003', 2, 5, 18.00),
+       ('ORD004', 3, 7, 14.50);

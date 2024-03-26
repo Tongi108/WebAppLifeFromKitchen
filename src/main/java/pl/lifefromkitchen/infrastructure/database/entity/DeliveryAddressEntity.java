@@ -2,6 +2,7 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import pl.lifefromkitchen.domain.DeliveryAddress;
 
 import java.util.Set;
 
@@ -30,11 +31,9 @@ public class DeliveryAddressEntity {
     @Column(name = "postal_code")
     private String postalCode;
 
-    @ManyToMany
-    @JoinTable(
-            name = "producer_delivery_address",
-            joinColumns = @JoinColumn(name = "delivery_address_id"),
-            inverseJoinColumns = @JoinColumn(name = "producer_id")
-    )
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "deliveryAddresses")
     private Set<ProducerEntity> producers;
+
+
+
 }

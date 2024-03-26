@@ -3,6 +3,8 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @EqualsAndHashCode(of = "customerId")
@@ -35,4 +37,9 @@ public class CustomerEntity {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity address;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    Set<OrderHeaderEntity> orderHeaders;
+
+
 }
