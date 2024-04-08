@@ -15,10 +15,9 @@ public interface ProducerMapper {
     ProducerMapper INSTANCE = Mappers.getMapper(ProducerMapper.class);
 
     ProducerDTO mapToDTO(Producer producer);
-    Producer mapToModel(ProducerDTO producerDTO);
-
-
 
     List<ProducerDTO> mapToDTOs(List<Producer> producers);
+
+    List<String> mapToDTOsString(List<String> city);
 
 }

@@ -2,7 +2,6 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import pl.lifefromkitchen.domain.DeliveryAddress;
 
 import java.util.Set;
 
@@ -41,7 +40,7 @@ public class ProducerEntity {
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "producer")
-    Set<OrderHeaderEntity> orderHeaders;
+    private Set<OrderHeaderEntity> orderHeaders;
 
     @ManyToMany
     @JoinTable(

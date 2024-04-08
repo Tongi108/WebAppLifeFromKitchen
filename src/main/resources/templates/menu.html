@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css"
+          integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+          integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+          integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+          crossorigin="anonymous">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <title>Life From Kitchen</title>
+</head>
+
+
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" th:href="@{/}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!--                    <li class="nav-item"><a class="nav-link" href="index.html">Utwórz Konto</a></li>-->
+                    <!--                    <li class="nav-item"><a class="nav-link" href="about.html">Zaloguj się</a></li>-->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                            <li><a class="dropdown-item" th:href="strona-logowania.html">Zaloguj się</a></li>
+                            <li><a class="dropdown-item" th:href="strona-tworzenia-konta.html">Utwórz Konto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5">
+        <div class="container">
+            <h1 class="mt-4">Witamy w <span th:text="${producerName}"></span></h1>
+
+            <div th:if="${menus != null and not #lists.isEmpty(menus)}">
+                <div class="row">
+                    <div th:each="menuDto : ${menus}" class="col-md-4 mb-4">
+                        <div class="card">
+                            <!-- Dodaj zdjęcie (jeśli istnieje) -->
+<!--                            <img th:src="${menuDto.menuImage}" class="card-img-top" alt="Food">-->
+                            <img th:src="@{${menuDto.menuImage}}" class="card-img-top" alt="Food">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${menuDto.menuCategory}"></h5>
+                                <!-- Dodaj opis (jeśli istnieje) -->
+                                <p class="card-text" th:text="${menuDto.description}"></p>
+                                <a th:href="@{'/menu/details/' + ${menuDto.menuCategory}}" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="${menus == null or #lists.isEmpty(menus)}">
+                <p>No menu found for the producer.</p>
+            </div>
+        </div>
+<!--        <div class="container">-->
+<!--            <h1 class="mt-4">Producer Details</h1>-->
+<!--            <div th:if="${menu}" class="card mt-4">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title" th:text="${menu.producer}"></h5>-->
+<!--                    <p class="card-text" th:text="${menu.description}"></p>-->
+<!--                    <a th:href="@{/}" class="btn btn-primary">Back to Menu</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div th:unless="${menu}" class="alert alert-warning mt-4" role="alert">-->
+<!--                Producer not found.-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="fixed-bottom text-center mb-5">
+            <h1 class="fw-bolder">Life From Kitchen</h1>
+            <p class="lead fw-normal text-muted mb-0">Zjedz smacznie i zdrowo!</p>
+        </div>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @With
@@ -13,9 +14,10 @@ public class MenuItem {
 
     Integer menuItemId;
     String name;
-    String price;
+    BigDecimal price;
     String imageUrl;
     MenuItemCategory menuItemCategory;
+    Set<Menu> menus;
     Set<OrderDetail> orderDetails;
-    Set<MenuMenuItem> menuMenuItems;//sprawdzić czy tak może być(połączenie ManyToMany)
+
 }

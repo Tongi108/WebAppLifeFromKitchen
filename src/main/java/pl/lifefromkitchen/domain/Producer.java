@@ -1,6 +1,7 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
+import pl.lifefromkitchen.infrastructure.database.entity.DeliveryAddressEntity;
 
 import java.util.Set;
 
@@ -22,6 +23,6 @@ public class Producer {
     String phoneNumber;
     Set<OrderHeader> orderHeaders;
     Set<Menu> menus;
-    //brakuje producerDeliveryAddress
-    // brakuje deliveryAddress
+    Set<DeliveryAddress> deliveryAddresses;
+
 }

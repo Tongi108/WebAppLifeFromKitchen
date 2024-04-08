@@ -2,7 +2,6 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import pl.lifefromkitchen.domain.Menu;
 
 import java.util.Set;
 
@@ -18,12 +17,12 @@ import java.util.Set;
 public class MenuCategoryEntity {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menu_category_id")
     private Integer menuCategoryId;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @OneToMany(mappedBy = "menuCategory", fetch = FetchType.LAZY)
     private Set<MenuEntity> menus;

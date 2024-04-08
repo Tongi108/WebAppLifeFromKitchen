@@ -2,7 +2,6 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import pl.lifefromkitchen.domain.DeliveryAddress;
 
 import java.util.Set;
 

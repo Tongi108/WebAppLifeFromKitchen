@@ -19,10 +19,10 @@ public class MenuItemCategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menu_item_category_id")
-    Integer menuItemCategoryId;
+    private Integer menuItemCategoryId;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "menuItemCategory")
     private Set<MenuItemEntity> menuItems;

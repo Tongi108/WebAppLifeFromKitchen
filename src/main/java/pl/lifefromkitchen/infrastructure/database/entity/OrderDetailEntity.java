@@ -2,8 +2,6 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import pl.lifefromkitchen.domain.MenuItem;
-import pl.lifefromkitchen.domain.OrderHeader;
 
 import java.math.BigDecimal;
 
@@ -21,13 +19,13 @@ public class OrderDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_detail_id")
-    Integer orderDetailId;
+    private Integer orderDetailId;
 
     @Column(name = "order_number", unique = true)
     private String orderNumber;
 
     @Column(name = "total_price")
-    BigDecimal totalPrice;
+    private BigDecimal totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_header_id")

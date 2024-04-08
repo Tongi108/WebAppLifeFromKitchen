@@ -31,15 +31,15 @@ public class CustomerEntity {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity address;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-    Set<OrderHeaderEntity> orderHeaders;
+    private Set<OrderHeaderEntity> orderHeaders;
 
 
 }

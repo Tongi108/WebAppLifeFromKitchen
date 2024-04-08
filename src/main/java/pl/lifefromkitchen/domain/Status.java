@@ -1,6 +1,9 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
+import pl.lifefromkitchen.infrastructure.database.entity.OrderHeaderEntity;
+
+import java.util.Set;
 
 @With
 @Value
@@ -11,4 +14,5 @@ public class Status {
 
     Integer statusId;
     String status;
+    Set<OrderHeaderEntity> orderHeaders;
 }

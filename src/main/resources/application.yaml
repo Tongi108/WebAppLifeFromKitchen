@@ -7,9 +7,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/lifefromkitchen
+    url: jdbc:postgresql://localhost:5433/lifefromkitchen
     username: postgres
-    password: haribol
+    password: postgres108
     hikari:
       idle-timeout: 10000
       connectionTimeout: 20000
@@ -21,6 +21,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
   mvc:
     hiddenmethod:
       filter:
@@ -28,4 +30,8 @@ spring:
 
   flyway:
     schemas: public
-    baselineOnMigrate: true
+    baseline-on-migrate: true
+    enabled: true
+
+    baseline-description: "init"
+    baseline-version: 0

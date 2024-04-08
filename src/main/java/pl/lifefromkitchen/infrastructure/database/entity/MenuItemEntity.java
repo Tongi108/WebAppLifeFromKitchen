@@ -2,8 +2,8 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import pl.lifefromkitchen.domain.MenuItemCategory;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Getter
@@ -20,28 +20,28 @@ public class MenuItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menu_item_id")
-    Integer menuItemId;
+    private Integer menuItemId;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "price")
-    String price;
+    private BigDecimal price;
 
     @Column(name = "image")
-    String imageUrl;
+    private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_item_category_id")
-    MenuItemCategoryEntity menuItemCategory;
+    private MenuItemCategoryEntity menuItemCategory;
 
 
-    @ManyToMany
-    @JoinTable(name = "menu_menuItem",
-            joinColumns = @JoinColumn(name = "menu_item_id"),
-            inverseJoinColumns = @JoinColumn(name = "menu_id"))
+    @ManyToMany(mappedBy = "menuOfItems", fetch = FetchType.LAZY)
     private Set<MenuEntity> menus;
 
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "menuItem")
-    private Set<OrderDetailEntity> orderDetail;
+    private Set<OrderDetailEntity> orderDetails;
+
+
 }

@@ -19,19 +19,29 @@ public class MenuEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menu_id")
-    Integer menuId;
+    private Integer menuId;
 
     @Column(name = "description")
-    String description;
+    private String description;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Column(name = "menu_image")
+    private String menuImage;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "producer_id")
-    ProducerEntity producer;
+    private ProducerEntity producer;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_category_id")
-    MenuCategoryEntity menuCategory;
+    private MenuCategoryEntity menuCategory;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "menus")
+
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "menu_menuItem",
+            joinColumns = {@JoinColumn(name = "menu_id")},
+            inverseJoinColumns = {@JoinColumn(name = "menu_item_id")})
     private Set<MenuItemEntity> menuOfItems;
+
+
 }

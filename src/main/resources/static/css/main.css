@@ -1,0 +1,42 @@
+
+
+
+.button-align {
+    vertical-align: after-edge;
+    height: 35px;
+    background-color: #2c830e;
+}
+
+.producer-item{
+    margin-bottom: 10px;
+}
+
+.list-group-item{
+    padding-top: 10px; /* Dodaj odstęp na górze każdego elementu */
+    padding-bottom: 10px; /* Dodaj odstęp na dole każdego elementu */
+}
+
+
+
+.custom-select {
+    width: 150%; /* Dostosuj szerokość według potrzeb */
+}
+
+#title1 {
+    color: #018f01;
+    font-family: 'Arial', sans-serif;
+}
+
+.title2 {
+    color: #6c0f1c !important;
+    font-family: 'Arial', sans-serif;
+}
+
+#title3 {
+    color: #484545;
+    font-family: 'Arial', sans-serif;
+}
+
+.block-color{
+    background-color: #2c830e;
+}

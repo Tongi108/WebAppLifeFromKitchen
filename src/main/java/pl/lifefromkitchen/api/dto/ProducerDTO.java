@@ -1,6 +1,9 @@
 package pl.lifefromkitchen.api.dto;
 
 import lombok.*;
+import pl.lifefromkitchen.domain.Menu;
+
+import java.util.Set;
 
 @Data
 @Builder
@@ -10,7 +13,9 @@ import lombok.*;
 public class ProducerDTO {
 
 
+    private Integer producerId;
     private String name;
     private String city;
     private String postalCode;
+    private Set<Menu> menus;
 }

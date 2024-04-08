@@ -1,16 +1,21 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
+import pl.lifefromkitchen.infrastructure.database.entity.MenuItemEntity;
+
+import java.util.Set;
 
 @With
 @Value
 @Builder
-@EqualsAndHashCode(of = "MenuId")
-@ToString(of = {"MenuId", "description"})
+@EqualsAndHashCode(of = "menuId")
+@ToString(of = {"menuId", "description"})
 public class Menu {
 
-    Integer MenuId;
+    Integer menuId;
     String description;
+    String menuImage;
     Producer producer;
     MenuCategory menuCategory;
+    Set<MenuItem> menuOfItems;
 }

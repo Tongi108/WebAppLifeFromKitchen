@@ -26,5 +26,5 @@ public class StatusEntity {
     private String status;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "status")
-    Set<OrderHeaderEntity> orderHeaders;
+    private Set<OrderHeaderEntity> orderHeaders;
 }
