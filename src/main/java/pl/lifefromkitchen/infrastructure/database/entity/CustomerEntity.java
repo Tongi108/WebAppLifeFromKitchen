@@ -36,7 +36,7 @@ public class CustomerEntity {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
-    private AddressEntity address;
+    private CustomerAddressEntity address;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private Set<OrderHeaderEntity> orderHeaders;

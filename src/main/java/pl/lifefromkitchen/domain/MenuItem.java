@@ -14,6 +14,7 @@ public class MenuItem {
 
     Integer menuItemId;
     String name;
+    String description;
     BigDecimal price;
     String imageUrl;
     MenuItemCategory menuItemCategory;

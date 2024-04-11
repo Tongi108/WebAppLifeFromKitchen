@@ -10,13 +10,15 @@ import java.util.Set;
 @Value
 @Builder
 @EqualsAndHashCode(of = "email")
-@ToString(of = {"producerId", "name", "city", "postalCode", "street", "email", "phoneNumber"})
+@ToString(of = {"producerId", "name", "city", "description", "postalCode", "street", "email", "phoneNumber"})
 public class Producer {
 
 
     Integer producerId;
     String name;
     String city;
+    String description;
+    String producerImage;
     String postalCode;
     String street;
     String email;

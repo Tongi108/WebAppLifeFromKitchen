@@ -26,6 +26,12 @@ public class ProducerEntity {
     @Column(name = "city")
     private String city;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "producer_image")
+    private String producerImage;
+
     @Column(name = "postal_code")
     private String postalCode;
 

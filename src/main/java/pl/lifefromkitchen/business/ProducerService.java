@@ -20,7 +20,7 @@ import java.util.Optional;
 public class ProducerService {
 
     private final ProducerDAO producerDAO;
-    private final MenuDAO menuDAO;
+
 
 
     @Transactional
@@ -33,14 +33,7 @@ public class ProducerService {
         return producerDAO.findProducersInCity(city);
     }
 
-//    @Transactional
-//    public Producer findProducerById(Integer producerId){
-//        Optional<Producer> producer = producerDAO.findById(producerId);
-//        if(producer.isEmpty()) {
-//            throw new NotFoundException("Could not find producer by id: [%s]".formatted(producerId));
-//        }
-//        return producer.get();
-//    }
+
 
 
 

@@ -1,4 +1,4 @@
-CREATE TABLE Address
+CREATE TABLE Customer_Address
 (
     address_id  SERIAL PRIMARY KEY,
     country     VARCHAR(32),

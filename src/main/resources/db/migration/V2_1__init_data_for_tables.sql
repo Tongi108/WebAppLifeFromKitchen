@@ -4,13 +4,16 @@ VALUES ('Pending'),
        ('Cancelled');
 
 
-INSERT INTO Producer (name, city, postal_code, street, email, phone_number)
-VALUES ('Syrenka Vege Jadło', 'Warsaw', '123', 'Street1', 'producent1@mail.com', '123-456-789'),
-       ('Lajkonik', 'Krakow', '456', 'Street2', 'producent2@mail.com', '987-654-321'),
-       ('Indian Food Vege', 'Wroclaw', '789', 'Street3', 'producent3@mail.com', '555-444-333');
+INSERT INTO Producer (name, city, description, producer_image, postal_code, street, email, phone_number)
+VALUES ('Syrenka Vege Jadło', 'Warsaw', 'opis producenta 1', '/assets/tortilla.jpg' , '123', 'Street1', 'producent1@mail.com', '123-456-789'),
+       ('WoooWege', 'Warsaw', 'opis producenta 2', '/assets/tortilla.jpg' , '200', 'Street2', 'producent6@mail.com', '600-456-789'),
+       ('Lajkonik', 'Krakow', 'opis producenta 3', '/assets/tortilla.jpg' , '456', 'Street2', 'producent2@mail.com', '987-654-321'),
+       ('Indian Food Vege', 'Wroclaw', 'opis producenta 4', '/assets/tortilla.jpg' , '776', 'Street3', 'producent3@mail.com', '555-444-333'),
+       ('Fiki Miki Restaurant', 'Wroclaw', 'opis producenta 5', '/assets/tortilla.jpg' , '789', 'Street4', 'producent4@mail.com', '555-888-333'),
+       ('Wegetarian', 'Wroclaw', 'opis producenta 6', '/assets/tortilla.jpg' , '800', 'Street5', 'producent5@mail.com', '555-000-333');
 
 
-INSERT INTO Address (country, city, street, postal_code)
+INSERT INTO Customer_Address (country, city, street, postal_code)
 VALUES ('Poland', 'Warsaw', 'Nowa 1', '00-001'),
        ('Poland', 'Krakow', 'Stara 2', '30-002'),
        ('Poland', 'Wroclaw', 'Główna 3', '50-003');
@@ -36,14 +39,19 @@ VALUES ('Śniadania'),
 
 INSERT INTO Menu (description, menu_image, producer_id, menu_category_id)
 VALUES ('info producent1-1', '/assets/tortilla.jpg', 1, 1),
-       ('info producent1-2', '/assets/sup.jpg',  1, 2),
+       ('info producent1-2', '/assets/sup.jpg', 1, 2),
        ('info producent1-3', '/assets/drink.jpg', 1, 3),
-       ('info producent2-1', '/assets/tortilla.jpg',  2, 1),
+       ('info producent2-1', '/assets/tortilla.jpg', 2, 1),
        ('info producent2-2', '/assets/sup.jpg', 2, 2),
        ('info producent2-3', '/assets/drink.jpg', 2, 3),
-       ('info producent3-1', '/assets/sup.jpg', 3, 2),
-       ('info producent3-2', '/assets/drink.jpg', 3, 3);
-
+       ('info producent3-2', '/assets/sup.jpg', 3, 2),
+       ('info producent4-1', '/assets/tortilla.jpg', 4, 1),
+       ('info producent4-2', '/assets/sup.jpg', 4, 2),
+       ('info producent4-3', '/assets/drink.jpg', 4, 3),
+       ('info producent5-3', '/assets/drink.jpg', 5, 3),
+       ('info producent6-1', '/assets/drink.jpg', 6, 1),
+       ('info producent6-2', '/assets/drink.jpg', 6, 2),
+       ('info producent6-3', '/assets/drink.jpg', 6, 3);
 
 
 
@@ -56,16 +64,16 @@ VALUES ('Śniadanie'),
        ('Zupa');
 
 
-INSERT INTO Menu_Item (name, price, image, menu_item_category_id)
-VALUES ('Tofuśnica', 15.99, '...', 1),
-       ('Omlet', 16.50, '...', 1),
-       ('Owsianka', 12.50, '...', 1),
-       ('Risotto z warzyw', 29.99, '...', 2),
-       ('Sałatka grecka', 18.00, '...', 5),
-       ('Zupa pomidorowa', 12.99, '...', 6),
-       ('Zupa krem z brokułów', 14.50, '...', 6),
-       ('Kawa latte', 8.50, '...', 4),
-       ('Herbata zielona', 6.00, '...', 4);
+INSERT INTO Menu_Item (name, description, price, image, menu_item_category_id)
+VALUES ('Tofuśnica', 'najlepsza tofuśnica pod słońcem', 15.99, '/assets/tortilla.jpg', 1),
+       ('Omlet', 'vege omlet coś wspaniałego', 16.50, '/assets/tortilla.jpg', 1),
+       ('Owsianka', 'Power z rana to owsiana', 12.50, '/assets/tortilla.jpg', 1),
+       ('Kaszotto z warzywami', 'Gryczana kasza daje więcej niż myślisz', 29.99, '/assets/tortilla.jpg', 2),
+       ('Sałatka grecka', 'Sałatka grecka dobra na wszystko', 18.00, '/assets/tortilla.jpg', 5),
+       ('Zupa pomidorowa z ryżem', 'Pyszna zupa na bazie prawdziwych pomidorów', 12.99, '/assets/tortilla.jpg', 6),
+       ('Zupa krem z brokułów', 'Brokuł to symbol siły', 14.50, '/assets/tortilla.jpg', 6),
+       ('Kawa latte', 'Kawa to bezkofeinowa wspaniałe latte', 8.50, '/assets/tortilla.jpg', 4),
+       ('Herbata zielona', 'jak herbata to tylko z jaśminem z Wietnamu', 6.00, '/assets/tortilla.jpg', 4);
 
 
 INSERT INTO Menu_MenuItem (menu_item_id, menu_id)

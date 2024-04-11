@@ -16,7 +16,7 @@ public class Customer {
     String surname;
     String phoneNumber;
     String email;
-    Address address;
+    CustomerAddress address;
     Set<OrderHeader> orderHeaders;
 }
 

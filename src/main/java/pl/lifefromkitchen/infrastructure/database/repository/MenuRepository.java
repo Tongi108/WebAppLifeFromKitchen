@@ -25,4 +25,9 @@ public class MenuRepository implements MenuDAO {
                 .map(menuEntityMapper::mapFromEntity)
                 .toList();
     }
+
+    @Override
+    public List<String> findMenuCategoriesName(String producerName) {
+        return menuJpaRepository.findMenuCategoryNameByProducerName(producerName);
+    }
 }

@@ -11,8 +11,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "address")
-public class AddressEntity {
+@Table(name = "customer_address")
+public class CustomerAddressEntity {
 
 
     @Id

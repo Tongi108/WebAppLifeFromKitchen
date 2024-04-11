@@ -16,6 +16,8 @@ public class ProducerDTO {
     private Integer producerId;
     private String name;
     private String city;
+    private String description;
+    private String producerImage;
     private String postalCode;
     private Set<Menu> menus;
 }

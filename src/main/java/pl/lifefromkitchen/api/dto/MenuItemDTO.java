@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 public class MenuItemDTO {
 
     String name;
+    String description;
     BigDecimal price;
     String imageUrl;
     MenuItemCategory menuItemCategory;

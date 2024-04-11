@@ -7,6 +7,8 @@ import java.util.Optional;
 
 public interface MenuDAO {
     List<Menu> findMenu(String producerName);
+    List<String> findMenuCategoriesName(String producerName);
+
 
 
 

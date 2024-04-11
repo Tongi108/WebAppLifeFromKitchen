@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.lifefromkitchen.domain.Address;
+import pl.lifefromkitchen.domain.CustomerAddress;
 @Data
 @Builder
 @NoArgsConstructor
@@ -15,5 +15,5 @@ public class CustomerDTO {
     String surname;
     String phoneNumber;
     String email;
-    Address address;
+    CustomerAddress address;
 }

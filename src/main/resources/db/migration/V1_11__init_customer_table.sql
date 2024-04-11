@@ -7,6 +7,6 @@ CREATE TABLE Customer
     email       VARCHAR(100) UNIQUE,
     address_id  INT,
     FOREIGN KEY (address_id)
-        REFERENCES Address (address_id)
+        REFERENCES Customer_Address (address_id)
 );
 

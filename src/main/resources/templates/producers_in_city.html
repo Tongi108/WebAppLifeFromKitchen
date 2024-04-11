@@ -35,8 +35,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-<!--                    <li class="nav-item"><a class="nav-link" href="index.html">Utwórz Konto</a></li>-->
-<!--                    <li class="nav-item"><a class="nav-link" href="about.html">Zaloguj się</a></li>-->
+                    <!--                    <li class="nav-item"><a class="nav-link" href="index.html">Utwórz Konto</a></li>-->
+                    <!--                    <li class="nav-item"><a class="nav-link" href="about.html">Zaloguj się</a></li>-->
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
@@ -55,23 +55,23 @@
             <br>
             <h1 class="mb-4" th:text="'Producenci w mieście ' + ${cityName}"></h1>
             <br>
-
-            <div class="col-md-6">
-                <form th:action="@{/producer}" method="get">
-                    <div class="form-group mr-4">
-                        <select  class="form-control custom-select" name="producerName" id="name">
-                            <!--/*@thymesVar id="name" type="db"*/-->
-                            <!--/*@thymesVar id="name" type="db"*/-->
-                            <option th:each="producer : ${producers}" th:value="${producer.name}" th:text="${producer.name}"></option>
-                        </select>
+            <div th:each="producer : ${producers}" class="col-md-12 mb-4">
+                <a th:href="@{'/city/producer/' + ${producer.name} + '/menu'}" class="card-link">
+                    <div class="card mb-3" style="max-width: 700px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img th:src="@{${producer.producerImage}}" class="img-thumbnail" style="max-width: 200px;" alt="...">
+                            </div>
+                            <div class="col-md-8 ">
+                                <div class="card-body text-center">
+                                    <h6 th:text="${producer.name}"></h6>
+                                    <p th:text="${producer.description}" class="text-center"></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary button-align ml-6 ml-auto">Wybierz</button>
-                </form>
+                </a>
             </div>
-        </div>
-        <div class="fixed-bottom text-center mb-5">
-            <h1 class="fw-bolder">Life From Kitchen</h1>
-            <p class="lead fw-normal text-muted mb-0">Zjedz smacznie i zdrowo!</p>
         </div>
     </section>
 </main>

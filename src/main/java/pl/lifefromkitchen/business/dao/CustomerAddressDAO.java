@@ -1,4 +1,4 @@
 package pl.lifefromkitchen.business.dao;
 
-public interface AddressDAO {
+public interface CustomerAddressDAO {
 }

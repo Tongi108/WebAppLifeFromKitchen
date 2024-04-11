@@ -2,14 +2,12 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
-import java.util.Set;
-
 @With
 @Value
 @Builder
 @EqualsAndHashCode(of = "addressId")
 @ToString(of = {"addressId", "country", "city", "street", "postalCode"})
-public class Address {
+public class CustomerAddress {
     Integer addressId;
     String country;
     String city;
