@@ -5,7 +5,8 @@ import pl.lifefromkitchen.domain.Menu;
 
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,11 +14,11 @@ import java.util.Set;
 public class ProducerDTO {
 
 
-    private Integer producerId;
+//    private Integer producerId;
     private String name;
     private String city;
     private String description;
     private String producerImage;
     private String postalCode;
-    private Set<Menu> menus;
+//    private Set<Menu> menus;
 }

@@ -14,6 +14,6 @@ public interface MenuCategoryMapper {
 
     MenuCategoryDTO mapToDTO(MenuCategory menuCategory);
 
-    List<MenuCategoryDTO> mapToDTOs(List<MenuCategory> menuCategoryByProducerName);
+    List<MenuCategoryDTO> mapToDTOs(List<MenuCategory> menuCategories);
 
 }

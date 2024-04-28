@@ -49,25 +49,34 @@
     </nav>
     <section class="py-5">
         <div class="container">
-            <h1 class="mt-4">Witamy w <span th:text="${producerName}"></span></h1>
-            <div th:if="${menus != null and not #lists.isEmpty(menus)}">
-                <div th:each="menuDto, idx : ${menus}" class="col-md-4 mb-4">
-                    <h5 th:text="${menuCategoriesName[idx.index]}"></h5>
-                    <a th:href="@{'/menu/details/' + ${menuDto.menuCategory}}" class="card-link">
-                        <div class="card mb-3" style="max-width: 1000px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img th:src="@{${menuDto.menuImage}}" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <p th:text="${menuDto.description}"></p>
-                                    </div>
+            <br>
+            <h1 class="mt-4">Witamy w menu <span th:text="${producer}"></span></h1>
+            <br>
+            <div class="col-md-12 mb-4">
+            </div>
+            <div th:each="category : ${categories}">
+
+
+                <!--                <h1 th:text="${category}"></h1>-->
+                <a th:href="@{${category}}" class="card-link">
+                    <div class="card mb-3" style="max-width: 700px;">
+
+                        <div class="row g-0">
+                            <div class="col-md-4">
+
+<!--                                <img th:src="@{${item}}" class="img-fluid rounded-start"-->
+<!--                                     style="max-width: 200px;" alt="...">-->
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+<!--                                    <h3 th:text="${item.menuCategory}"></h3>-->
+                                    <p th:text="${category}"></p>
+                                    <!--                                                                        <p th:text="${item}"></p>-->
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

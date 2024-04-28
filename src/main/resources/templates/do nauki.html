@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Descriptions:</h2>
+            <ul>
+                <li th:each="description : ${descriptions}" th:text="${description}"></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Menu Images:</h2>
+            <ul>
+                <li th:each="image : ${menuImages}" th:text="${image}"></li>
+            </ul>
+        </div>
+    </div>
+</div>

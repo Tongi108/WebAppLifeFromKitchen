@@ -3,6 +3,7 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter

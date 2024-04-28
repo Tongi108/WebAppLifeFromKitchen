@@ -1,8 +1,9 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
-import pl.lifefromkitchen.infrastructure.database.entity.DeliveryAddressEntity;
 
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -26,5 +27,17 @@ public class Producer {
     Set<OrderHeader> orderHeaders;
     Set<Menu> menus;
     Set<DeliveryAddress> deliveryAddresses;
+
+    public Set<Menu> getMenus() {
+        return Objects.isNull(menus) ? new HashSet<>() : menus;
+    }
+
+    public Set<DeliveryAddress> getDeliveryAddress() {
+        return Objects.isNull(deliveryAddresses) ? new HashSet<>() : deliveryAddresses;
+    }
+
+    public Set<OrderHeader> getOrderHeaders() {
+        return Objects.isNull(orderHeaders) ? new HashSet<>() : orderHeaders;
+    }
 
 }

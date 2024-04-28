@@ -10,4 +10,11 @@ import java.util.List;
 
 @Repository
 public interface MenuCategoryJpaRepository extends JpaRepository<MenuCategoryEntity, Integer> {
+@Query("SELECT mc.name FROM MenuCategoryEntity mc JOIN mc.menus m WHERE m.producer.name = :producerName")
+List<String> findMenuCategoryByProducerName(@Param("producerName") String producerName);
+
+
+
+
+
 }

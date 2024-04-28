@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-400">
 <main class="flex-shrink-0">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,9 +35,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!--                    <li class="nav-item"><a class="nav-link" href="index.html">Utwórz Konto</a></li>-->
-                    <!--                    <li class="nav-item"><a class="nav-link" href="about.html">Zaloguj się</a></li>-->
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
@@ -53,22 +50,28 @@
     <section class="py-5">
         <div class="container">
             <br>
-            <h1 class="mb-4" th:text="'Producenci w mieście ' + ${cityName}"></h1>
+            <h1 class="mt-4">Witamy w menu <span th:text="${producerName}"></span></h1>
             <br>
-            <div th:each="producer : ${producers}" class="col-md-12 mb-4">
-                <a th:href="@{'/' + ${producer.name} + '/menu_details'}"  class="card-link">
+            <div class="col-md-12 mb-4">
+            </div>
+            <div th:each="item : ${menus}">
+
+
+                <!--                <h1 th:text="${category}"></h1>-->
+                <a th:href="@{${categoryName} + '/menu_details'}" class="card-link">
+                    <!--/*@thymesVar id="value" type="db"*/-->
                     <div class="card mb-3" style="max-width: 700px;">
+
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <!--/*@thymesVar id="producerImage" type="db"*/-->
-                                <img th:src="@{${producer.producerImage}}" class="img-thumbnail" style="max-width: 200px;" alt="...">
+
+                                <img th:src="@{${item.imageUrl}}" class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body text-center">
-                                    <!--/*@thymesVar id="name" type="db"*/-->
-                                    <h6 th:text="${producer.name}"></h6>
-                                    <!--/*@thymesVar id="description" type="db"*/-->
-                                    <p th:text="${producer.description}" class="text-center"></p>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 th:text="${item.name}"></h3>
+                                    <p th:text="${item.description}"></p>
+                                    <p th:text="${item.price}"></p>
                                 </div>
                             </div>
                         </div>

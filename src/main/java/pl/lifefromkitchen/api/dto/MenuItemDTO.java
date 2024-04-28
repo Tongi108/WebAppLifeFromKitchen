@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import pl.lifefromkitchen.domain.MenuItemCategory;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,4 +20,6 @@ public class MenuItemDTO {
     BigDecimal price;
     String imageUrl;
     MenuItemCategory menuItemCategory;
+
+
 }

@@ -1,15 +1,16 @@
 package pl.lifefromkitchen.domain;
 
 import lombok.*;
-import pl.lifefromkitchen.infrastructure.database.entity.MenuItemEntity;
 
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @With
 @Value
 @Builder
 @EqualsAndHashCode(of = "menuId")
-@ToString(of = {"menuId", "description"})
+@ToString(of = {"menuId", "description", "menuImage"})
 public class Menu {
 
     Integer menuId;
@@ -18,4 +19,12 @@ public class Menu {
     Producer producer;
     MenuCategory menuCategory;
     Set<MenuItem> menuOfItems;
+
+    public Set<MenuItem> getMenuOfItems() {
+        return Objects.isNull(menuOfItems) ? new HashSet<>() : menuOfItems;
+    }
+
+
+
+
 }

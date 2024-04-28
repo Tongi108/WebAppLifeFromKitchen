@@ -8,7 +8,6 @@ import pl.lifefromkitchen.infrastructure.database.repository.jpa.MenuJpaReposito
 import pl.lifefromkitchen.infrastructure.database.repository.mapper.MenuEntityMapper;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 @AllArgsConstructor
@@ -17,17 +16,9 @@ public class MenuRepository implements MenuDAO {
     private final MenuJpaRepository menuJpaRepository;
     private final MenuEntityMapper menuEntityMapper;
 
-
     @Override
-    public  List<Menu> findMenu(String producerName) {
-        return menuJpaRepository.findMenuByProducerName(producerName)
-                .stream()
-                .map(menuEntityMapper::mapFromEntity)
-                .toList();
-    }
+    public  List<String> findMenuByProducerName(String producerName) {
+        return menuJpaRepository.findMenuCategoryByProducerName(producerName);
 
-    @Override
-    public List<String> findMenuCategoriesName(String producerName) {
-        return menuJpaRepository.findMenuCategoryNameByProducerName(producerName);
     }
 }

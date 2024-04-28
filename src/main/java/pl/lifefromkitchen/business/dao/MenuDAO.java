@@ -3,12 +3,10 @@ package pl.lifefromkitchen.business.dao;
 import pl.lifefromkitchen.domain.Menu;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface MenuDAO {
-    List<Menu> findMenu(String producerName);
-    List<String> findMenuCategoriesName(String producerName);
 
+    List<String> findMenuByProducerName(String producerName);
 
 
 

@@ -3,6 +3,7 @@ package pl.lifefromkitchen.infrastructure.database.repository.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+import pl.lifefromkitchen.api.dto.MenuDTO;
 import pl.lifefromkitchen.domain.Menu;
 import pl.lifefromkitchen.infrastructure.database.entity.MenuEntity;
 
@@ -15,5 +16,7 @@ public interface MenuEntityMapper {
     @Mapping(target = "menuCategory", ignore = true)
     @Mapping(target = "menuOfItems", ignore = true)
     Menu mapFromEntity(MenuEntity menuEntity);
+
+
 
 }

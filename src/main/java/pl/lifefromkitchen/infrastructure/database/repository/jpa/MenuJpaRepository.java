@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface MenuJpaRepository extends JpaRepository<MenuEntity, Integer> {
 
-     List<MenuEntity> findMenuByProducerName(String producerName);
 
-     @Query("SELECT mc.name FROM MenuEntity m JOIN m.producer p JOIN m.menuCategory mc WHERE p.name = :producerName")
-     List<String> findMenuCategoryNameByProducerName(@Param("producerName") String producerName);
+     @Query("SELECT mc.name FROM MenuEntity m JOIN m.menuCategory mc WHERE m.producer.name = :producerName")
+     List<String> findMenuCategoryByProducerName(@Param("producerName") String producerName);
+
 
 
 
