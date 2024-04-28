@@ -4,6 +4,8 @@ import lombok.*;
 import pl.lifefromkitchen.domain.MenuCategory;
 import pl.lifefromkitchen.domain.Producer;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -11,8 +13,11 @@ import pl.lifefromkitchen.domain.Producer;
 public class MenuDTO {
 
 
+    String name;
+    String category;
     String description;
     String menuImage;
+    BigDecimal price;
 
 
 

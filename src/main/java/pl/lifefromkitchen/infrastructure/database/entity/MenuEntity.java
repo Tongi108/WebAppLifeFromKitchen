@@ -3,13 +3,14 @@ package pl.lifefromkitchen.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
 @Getter
 @Setter
 @EqualsAndHashCode(of = "menuId")
-@ToString(of = {"menuId", "description"})
+@ToString(of = {"menuId", "name", "category", "description", "menuImage"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,27 +23,23 @@ public class MenuEntity {
     @Column(name = "menu_id")
     private Integer menuId;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "category")
+    private String category;
+
     @Column(name = "description")
     private String description;
 
     @Column(name = "menu_image")
     private String menuImage;
 
+    @Column(name = "price")
+    private BigDecimal price;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
     private ProducerEntity producer;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "menu_category_id")
-    private MenuCategoryEntity menuCategory;
-
-
-
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "menu_menuItem",
-            joinColumns = {@JoinColumn(name = "menu_id")},
-            inverseJoinColumns = {@JoinColumn(name = "menu_item_id")})
-    private Set<MenuItemEntity> menuOfItems;
-
 
 }

@@ -54,24 +54,24 @@
             <br>
             <div class="col-md-12 mb-4">
             </div>
-            <div th:each="category : ${categories}">
+            <div th:each="menu : ${menus}">
 
 
-                <!--                <h1 th:text="${category}"></h1>-->
+                <h1 th:text="${menu.category}"></h1>
                 <a th:href="@{${category}}" class="card-link">
                     <div class="card mb-3" style="max-width: 700px;">
 
                         <div class="row g-0">
                             <div class="col-md-4">
 
-<!--                                <img th:src="@{${item}}" class="img-fluid rounded-start"-->
-<!--                                     style="max-width: 200px;" alt="...">-->
+                                <img th:src="@{${menu.menuImage}}" class="img-fluid rounded-start"
+                                     style="max-width: 200px;" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-<!--                                    <h3 th:text="${item.menuCategory}"></h3>-->
-                                    <p th:text="${category}"></p>
-                                    <!--                                                                        <p th:text="${item}"></p>-->
+                                    <h3 th:text="${menu.name}"></h3>
+                                    <p th:text="${menu.description}"></p>
+                                    <p th:text="${menu.price}"></p>
                                 </div>
                             </div>
                         </div>

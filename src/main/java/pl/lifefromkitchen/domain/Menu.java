@@ -2,6 +2,7 @@ package pl.lifefromkitchen.domain;
 
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,15 +15,16 @@ import java.util.Set;
 public class Menu {
 
     Integer menuId;
+    String name;
+    String category;
     String description;
     String menuImage;
+    BigDecimal price;
     Producer producer;
-    MenuCategory menuCategory;
-    Set<MenuItem> menuOfItems;
 
-    public Set<MenuItem> getMenuOfItems() {
-        return Objects.isNull(menuOfItems) ? new HashSet<>() : menuOfItems;
-    }
+
+
+
 
 
 

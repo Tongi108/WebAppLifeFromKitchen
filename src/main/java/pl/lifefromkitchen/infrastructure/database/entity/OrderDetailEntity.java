@@ -31,7 +31,5 @@ public class OrderDetailEntity {
     @JoinColumn(name = "order_header_id")
     private OrderHeaderEntity orderHeader;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "menu_item_id")
-    private MenuItemEntity menuItem;
+
 }

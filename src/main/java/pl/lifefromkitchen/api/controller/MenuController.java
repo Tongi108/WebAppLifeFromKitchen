@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.lifefromkitchen.api.dto.MenuDTO;
 import pl.lifefromkitchen.api.dto.ProducerDTO;
-import pl.lifefromkitchen.api.dto.mapper.MenuItemMapper;
 import pl.lifefromkitchen.api.dto.mapper.MenuMapper;
 import pl.lifefromkitchen.api.dto.mapper.ProducerMapper;
-import pl.lifefromkitchen.business.MenuCategoryService;
-import pl.lifefromkitchen.business.MenuItemService;
 import pl.lifefromkitchen.business.MenuService;
 import pl.lifefromkitchen.business.ProducerService;
 
@@ -24,7 +21,7 @@ public class MenuController {
 
     private ProducerMapper producerMapper;
     private ProducerService producerService;
-    private MenuCategoryService menuCategoryService;
+
     private MenuService menuService;
     private MenuMapper menuMapper;
 
@@ -39,10 +36,10 @@ public class MenuController {
 
     @GetMapping("/{producer}/menu_details")
     public String showProducerMenu(Model model, @PathVariable String producer) {
-        List<String> categories = menuCategoryService.findCategories(producer);
-
+        List<MenuDTO> menus = menuMapper.mapToDTOs(menuService.findMenus(producer));
         model.addAttribute("producer", producer);
-        model.addAttribute("categories", categories);
+        model.addAttribute("menus", menus);
+
         return "menu";
     }
 

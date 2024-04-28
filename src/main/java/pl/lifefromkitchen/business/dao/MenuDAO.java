@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MenuDAO {
 
-    List<String> findMenuByProducerName(String producerName);
+    List<Menu> findMenuByProducerName(String producerName);
 
 
 

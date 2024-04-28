@@ -13,8 +13,6 @@ public interface MenuEntityMapper {
     MenuEntityMapper INSTANCE = Mappers.getMapper(MenuEntityMapper.class);
 
     @Mapping(target = "producer", ignore = true)
-    @Mapping(target = "menuCategory", ignore = true)
-    @Mapping(target = "menuOfItems", ignore = true)
     Menu mapFromEntity(MenuEntity menuEntity);
 
 
